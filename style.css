@@ -1,0 +1,314 @@
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'California', sans-serif; /* Or any font you prefer */
+}
+
+/* Enable Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+}
+
+/* Background Video Styling */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+    background-size: cover;
+}
+
+/* Sidebar Navigation Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+}
+
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navigation li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: none;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    padding: 20px 0;
+    background-color: transparent;
+    border: none;
+}
+
+.navigation a:hover {
+    color: #ddd;
+    background-color: transparent;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    overflow: auto;
+}
+
+/* Sections Styling */
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+section h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Overlay for Readability in Sections */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: calc(100% + 200px);
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Slider Container */
+.slider {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Slider Images Container */
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slide */
+.slide {
+    min-width: 100%;
+    height: auto;
+    position: relative;
+}
+
+/* Slide Image */
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+/* Magnify Glass Effect */
+.magnifier {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    display: none;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Price Styling */
+.price {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Adjust Shop Section Styling */
+#shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Hide previous product styles if any */
+.product-container, .product {
+    display: none;
+}
+
+/* Contact Section Specific Styling */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+    position: relative;
+}
+
+#contact h2 {
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-ig-link {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 40px;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main-ig-link:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.profiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-link {
+    display: block;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+    filter: grayscale(100%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .navigation a {
+        font-size: 16px;
+        padding: 8px 0;
+    }
+
+    .main-content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+    }
+
+    section h2 {
+        font-size: 36px;
+    }
+
+    .nav-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .profile-image {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation a {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 80px 15px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    .nav-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .profile-image {
+        width: 120px;
+    }
+}
